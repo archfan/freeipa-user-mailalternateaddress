@@ -7,25 +7,27 @@ if [ ! -d "/usr/share/ipa/ui/js" ]; then
 fi
 
 PYSRC="user_mailalternateaddress.py"
-if [ -d /usr/lib/python2.*/site-packages/ipaserver/plugins ] ; then
-	for dir in /usr/lib/python2.* ; do
+
+if [ -d /usr/lib/python3.*/site-packages/ipaserver/plugins ] ; then
+	for dir in /usr/lib/python3.* ; do
 		PYPATH="${dir}/site-packages/ipaserver/plugins"
 		break
 	done
-	PYSRC="user_mailalternateaddress_4.4.py"
-elif [ -d /usr/lib/python2.*/dist-packages/ipaserver/plugins ] ; then
-	for dir in /usr/lib/python2.* ; do
+
+elif [ -d /usr/lib/python3.*/dist-packages/ipaserver/plugins ] ; then
+	for dir in /usr/lib/python3.* ; do
 		PYPATH="${dir}/dist-packages/ipaserver/plugins"
 		break
 	done
-	PYSRC="user_mailalternateaddress_4.4.py"
-elif [ -d /usr/lib/python2.*/site-packages/ipalib/plugins ] ; then
-	for dir in /usr/lib/python2.* ; do
+
+elif [ -d /usr/lib/python3.*/site-packages/ipalib/plugins ] ; then
+	for dir in /usr/lib/python3.* ; do
 		PYPATH="${dir}/site-packages/ipalib/plugins"
 		break
-	done
-elif [ -d /usr/lib/python2.*/dist-packages/ipalib/plugins ] ; then
-	for dir in /usr/lib/python2.* ; do
+	
+
+elif [ -d /usr/lib/python3.*/dist-packages/ipalib/plugins ] ; then
+	for dir in /usr/lib/python3.* ; do
 		PYPATH="${dir}/dist-packages/ipalib/plugins"
 		break
 	done

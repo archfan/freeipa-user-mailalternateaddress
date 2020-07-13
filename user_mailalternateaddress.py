@@ -1,4 +1,4 @@
-from ipalib.plugins.user import user
+from ipaserver.plugins.user import user
 from ipalib import Str, _
 
 user.takes_params += (

@@ -14,23 +14,12 @@ if [ -d /usr/lib/python3.*/site-packages/ipaserver/plugins ] ; then
 		break
 	done
 
-elif [ -d /usr/lib/python3.*/dist-packages/ipaserver/plugins ] ; then
-	for dir in /usr/lib/python3.* ; do
-		PYPATH="${dir}/dist-packages/ipaserver/plugins"
-		break
-	done
-
 elif [ -d /usr/lib/python3.*/site-packages/ipalib/plugins ] ; then
 	for dir in /usr/lib/python3.* ; do
 		PYPATH="${dir}/site-packages/ipalib/plugins"
 		break
-	
+done	
 
-elif [ -d /usr/lib/python3.*/dist-packages/ipalib/plugins ] ; then
-	for dir in /usr/lib/python3.* ; do
-		PYPATH="${dir}/dist-packages/ipalib/plugins"
-		break
-	done
 else
 	echo "Unable to detect FreeIPA python lib path, manual installation required" 1>&2
 	exit 1
